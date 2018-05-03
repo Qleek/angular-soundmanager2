@@ -4689,9 +4689,8 @@ ngSoundManager.factory('angularPlayer', ['$rootScope', '$log',
                         //start first track if repeat is on
                         this.playTrack(soundManager.soundIDs[0]);
                     } else {
-                        //breadcase not playing anything
-                        isPlaying = false;
-                        $rootScope.$broadcast('music:isPlaying', isPlaying);
+                        // stop playing
+                        this.stop();
                     }
                 }
             },
